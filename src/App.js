@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import './DemoComponent';
+import DemoComponent from './DemoComponent';
 
 function App() {
   let dateCourante = new Date();
@@ -10,17 +12,17 @@ function App() {
     <div>
       <div className="App">
         <header className="App-header">
+          <DemoComponent/>
           <img src={logo} className="App-logo" alt="logo" />
           <p>Temps Javascripts {tempsJavascript} millisecondes</p>
           <p>Temps PHP {tempsPHP/1000} millisecondes</p>
           <p>Today is {dateCourante.getDate()}/{dateCourante.getMonth()+1}/{year} millisecondes</p>
         </header>
+      
       </div>
       <footer>Molengeek TM</footer>
     </div>
-
   );
 }
 
 export default App;
-
