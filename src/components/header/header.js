@@ -1,22 +1,32 @@
-import logo from '../../logo.svg';
 import React, { Component } from 'react';
+import hey from './logo.svg';
 import DemoComponent from '../DemoComponent';
+import Navigation from './navbar/navigation'
+import DisplayTime from './DisplayTime';
 
 
 class Header extends Component {
+    currentPage = "heure";
+    
     render() {
-        let dateCourante = new Date();
-        let tempsJavascript = dateCourante.getTime()
-        let tempsPHP = dateCourante
-        let year = dateCourante.getFullYear()
+        let pageContent ;
+        if (this.currentPage === "acceuil"){
+            pageContent = <DemoComponent/>;
+        }
+        else{
+        
+            pageContent = <DisplayTime/>;
+        }
+        
         return (
-                    <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>Temps Javascripts {tempsJavascript} millisecondes</p>
-                    <p>Temps PHP {tempsPHP/1000} millisecondes</p>
-                    <p>Today is {dateCourante.getDate()}/{dateCourante.getMonth()+1}/{year} millisecondes</p>
-                    <DemoComponent/>
-                    </header>
+            <header className="App-header">
+                <Navigation />
+                <img src={hey} className="App-logo" alt="logo" />
+                {this.currentPage}
+                {pageContent}
+                
+            </header>
+
         );
     }
 }
