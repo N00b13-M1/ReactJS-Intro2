@@ -6,27 +6,19 @@ import DisplayTime from './DisplayTime';
 
 
 class Header extends Component {
-    currentPage = "heure";
+    currentPage = "acceuil";
     
     render() {
-        let pageContent ;
-        if (this.currentPage === "acceuil"){
-            pageContent = <DemoComponent/>;
-        }
-        else{
-        
-            pageContent = <DisplayTime/>;
-        }
-        
-        return (
-            <header className="App-header">
+
+    return(
+            <header className = "App-header" >
                 <Navigation />
                 <img src={hey} className="App-logo" alt="logo" />
                 {this.currentPage}
-                {pageContent}
-                
+                {this.currentPage === "acceuil" && <DemoComponent/>
+                }
+                {this.currentPage === "heure" && <DisplayTime/>}
             </header>
-
         );
     }
 }
