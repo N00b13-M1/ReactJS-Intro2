@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class footer extends Component {
     render() {
         return (
-            <footer>
-                Un site de molengeek
-            </footer>
+            <div>
+                <footer>
+                Un site de Molengeek
+                </footer>
+            </div>
         );
     }
 }
 
-export default Footer;
+export default footer;

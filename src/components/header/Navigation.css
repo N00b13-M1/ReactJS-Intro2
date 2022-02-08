@@ -1,4 +1,4 @@
-nav {
+nav{
     position: fixed;
     top: 10px;
 }
@@ -9,6 +9,6 @@ button{
     border: none;
     background-color: #61dafb;
     color: #282c34;
-    font-size: calc(10px + 2vmin);
+    font-size: (10px + 2vmin);
     cursor: pointer;
 }

@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 
 class DisplayTime extends Component {
-    currentPage = "heure";
     
+    currentPage = "heure";
     render() {
         let dateCourante = new Date();
-        let tempsJavascript = dateCourante.getTime()
-        let tempsPHP = tempsJavascript/1000
+        let tempsJavaScript = dateCourante.getTime();
+        let tempsPHP = tempsJavaScript/1000;
+        console.log(this.props)
 
         return (
-                <div>
-                    <p>Temps Javascripts {tempsJavascript} millisecondes
-                    </p>
-                    <p>Temps PHP {tempsPHP} millisecondes
-                    </p>
-                    <p>Today is {dateCourante.getDate()}/{dateCourante.getMonth() + 1}/{dateCourante.getFullYear()} millisecondes
-                    </p>
-                </div>)
+            <> {this.props.format === "jsTime" &&
+                <p>
+                    Temps Javascript: {tempsJavaScript} milisecondes
+                </p>
+                }
+                {this.props.format === "phpTime" &&
+                <p>
+                    Temps PHP: {tempsPHP} secondes
+                </p>
+                }
+                {this.props.format === "humanTime" &&
+                <p>
+                    Temps pour un humain: {dateCourante.getDate()}/{dateCourante.getMonth() + 1}/{dateCourante.getFullYear()}
+                </p>
+                }
+            </>
+        );
     }
 }
 

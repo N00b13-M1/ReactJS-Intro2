@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
-class DemoComponent extends Component {
-  render(){
-    return (
-      <div>
-      Hello World
-      </div>
-    );
-  }
+export class DemoComponent extends Component {
+    render() {
+        return (
+            <div>
+                Hello world
+            </div>
+        )
+    }
 }
 
-export default DemoComponent;
+export default DemoComponent
