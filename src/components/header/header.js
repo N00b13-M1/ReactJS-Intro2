@@ -11,11 +11,11 @@ class Header extends Component {
     // const (formatTime, setformatTime) = useState(phpTime)
 
     state = {
-        formatTime : "phpTime"
+        formatTime : "phpTime",
     }
 
-    currentPage = "heure";
-
+    currentPage = "heure"
+    
     onNavigationParent = (destination) =>{
         this.currentPage = destination;
         console.log(this.currentPage);
@@ -25,33 +25,32 @@ class Header extends Component {
         console.log(format);
         this.setState({
             formatTime : format
-        })
+        });
     }
 
     render() {
         return (
             <header className="App-header">
-                <Navigation onNavigation={this.onNavigationParent}/>
+                <Navigation onNavigation={this.onNavigationParent} />
                 <img src={logo} className="App-logo" alt="logo" />
                 {this.currentPage}
-                {this.currentPage === "acceuil" &&
-                    <DemoComponent/> 
+                { this.currentPage === "acceuil" && 
+                    <DemoComponent/>
                 }
-                {this.currentPage === "heure" &&
-                    <>
+                { this.currentPage === "heure" &&
+                    <div>
                         <DisplayTime format={this.state.formatTime} />
-                        <div>
+                        <div className="m-auto">
                             <button onClick={() => this.showTime('jsTime')}>JavaScript</button>
                             <button onClick={() => this.showTime('phpTime')}>PHP</button>
                             <button onClick={() => this.showTime('humanTime')}>Human</button>
                         </div>
-                    </>
+                    </div>
                 }
             </header>
-        )
+        );
     }   
 }
 
-
-
 export default Header
+

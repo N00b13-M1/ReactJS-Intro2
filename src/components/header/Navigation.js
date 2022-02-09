@@ -3,9 +3,9 @@ import './Navigation.css'
 
 
 class Navigation extends Component {
-    navigation = (destination) => {
-        this.props.onNavigation(destination)
-    }
+    // navigation = (destination) => {
+    //     this.props.onNavigation(destination)
+    // }
     render() {
         return (
             <>
